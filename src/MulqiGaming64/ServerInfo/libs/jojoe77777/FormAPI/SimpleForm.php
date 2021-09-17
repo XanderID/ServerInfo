@@ -18,7 +18,6 @@ class SimpleForm extends Form {
 	private $labelMap = [];
 
 	/**
-	 * @param int $id
 	 * @param callable $callable
 	 */
 	public function __construct(?callable $callable) {
