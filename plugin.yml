@@ -1,0 +1,6 @@
+name: ServerInfo
+main: MulqiGaming64\ServerInfo\ServerInfo
+version: 1.0.0
+api: 3.0.0
+description: a Info Plugin For Server In UI
+author: MulqiGaming64
