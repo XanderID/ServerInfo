@@ -13,6 +13,9 @@ use MulqiGaming64\ServerInfo\ServerInfo;
 
 class ServerInfoCommands extends PluginCommand {
 	
+	/** @var ServerInfo $plugin */
+	private $plugin;
+	
 	public function __construct(string $name, ServerInfo $plugin){
         parent::__construct($name, $plugin);
 		$this->setDescription("ServerInfo");
