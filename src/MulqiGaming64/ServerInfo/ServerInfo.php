@@ -14,7 +14,7 @@ use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerJoinEvent;
 
 use MulqiGaming64\ServerInfo\commands\ServerInfoCommands;
-use MulqiGaming64\ServerInfo\libs\jojoe77777\FormAPI\SimpleForm;
+use jojoe77777\FormAPI\SimpleForm;
 
 class ServerInfo extends PluginBase implements Listener{
 	
@@ -23,6 +23,11 @@ class ServerInfo extends PluginBase implements Listener{
    
 	public function onEnable(): void{
 		$this->saveDefaultConfig();
+		if (!class_exists(SimpleForm::class)) {
+			$this->getLogger()->error("FormAPI virion not found. Please download ServerInfo from Poggit-CI");
+            $this->getServer()->getPluginManager()->disablePlugin($this);
+            return;
+        }
 		$this->firstJoin = new Config($this->getDataFolder() . "firstjoin.yml", Config::YAML);
 		$this->getServer()->getCommandMap()->register("ServerInfo",  new ServerInfoCommands("serverinfo", $this));
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
