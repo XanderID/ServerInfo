@@ -29,26 +29,26 @@ class ServerInfoCommands extends PluginCommand {
             return true;
         }
         $available = [];
-        foreach($this->plugin->getConfig()->get("sub-form") as $subform => $value){
-        	$available[] = $subform;
+        foreach($this->plugin->getConfig()->get("subcategory-form") as $subcategoryform => $value){
+        	$available[] = $subcategoryform;
         }
         if(!isset($args[0])){
-        	$usage = "Usage: /serverinfo Sub" . C::EOL . C::GREEN . "Sub: " . C::EOL . C::WHITE;
-        	foreach($available as $sub){
-        		$usage .= "- " . $sub . C::EOL;
+        	$usage = "Usage: /serverinfo subcategory" . C::EOL . C::GREEN . "subcategory: " . C::EOL . C::WHITE;
+        	foreach($available as $subcategory){
+        		$usage .= "- " . $subcategory . C::EOL;
         	}
         	$sender->sendMessage($usage);
         } else {
-        	$subcmd = strtolower($args[0]);
-        	if(!in_array($subcmd, $available)){
-        		$usage = "Usage: /serverinfo Sub" . C::EOL . C::GREEN . "Sub: " . C::EOL . C::WHITE;
-        		foreach($available as $sub){
-        			$usage .= "- " . $sub . C::EOL;
+        	$subcategorycmd = strtolower($args[0]);
+        	if(!in_array($subcategorycmd, $available)){
+        		$usage = "Usage: /serverinfo subcategory" . C::EOL . C::GREEN . "subcategory: " . C::EOL . C::WHITE;
+        		foreach($available as $subcategory){
+        			$usage .= "- " . $subcategory . C::EOL;
         		}
         		$sender->sendMessage($usage);
         		return false;
         	} else {
-        		$this->plugin->sendForm($sender, $subcmd);
+        		$this->plugin->sendForm($sender, $subcategorycmd);
         		return true;
         	}
 		}
