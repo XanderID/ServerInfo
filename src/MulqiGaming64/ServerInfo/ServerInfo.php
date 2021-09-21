@@ -57,26 +57,26 @@ class ServerInfo extends PluginBase implements Listener{
 		return true;
 	}
 	
-	public function sendForm(Player $player, string $sub): bool{
-		$form = new SimpleForm(function (Player $player, int $data = null) use($sub){
+	public function sendForm(Player $player, string $subcategory): bool{
+		$form = new SimpleForm(function (Player $player, int $data = null) use($subcategory){
             if ($data === null) {
                 return false;
             }
-           foreach($this->getConfig()->getAll()["sub-form"][$sub]["button"][$data]["action"] as $commands){
+           foreach($this->getConfig()->getAll()["subcategory-form"][$subcategory]["button"][$data]["action"] as $commands){
            	$this->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender(), $this->replaceTag($player, $commands));
            }
         });
-        $form->setTitle($this->getConfig()->get("sub-form")[$sub]["title"]);
-        $form->setContent($this->getFormContent($player, $sub));
-        foreach($this->getConfig()->getAll()["sub-form"][$sub]["button"] as $id => $value){
+        $form->setTitle($this->getConfig()->get("subcategory-form")[$subcategory]["title"]);
+        $form->setContent($this->getFormContent($player, $subcategory));
+        foreach($this->getConfig()->getAll()["subcategory-form"][$subcategory]["button"] as $id => $value){
         	$form->addButton($value["text"]);
         }
         $form->sendToPlayer($player);
         return true;
 	}
 	
-	private function getFormContent(Player $player, string $sub): string{
-		$content = $this->getConfig()->get("sub-form")[$sub]["content"];
+	private function getFormContent(Player $player, string $subcategory): string{
+		$content = $this->getConfig()->get("subcategory-form")[$subcategory]["content"];
 		$last = count($content); //For remove new line in last line
 		$count = 1; // For remove new line in last line
 		$result = ""; // For to be accessible
