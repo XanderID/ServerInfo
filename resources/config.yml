@@ -2,20 +2,20 @@
 # Send Info 
 # On First Player Join
 on-first-join: true
-# Sub Form
+# subcategory Form
 join-first-form: "rules"
 
 # Send Info
 # On Player Join
 on-join: true
-# Sub Form
+# subcategory Form
 join-form: "welcome"
 
-# All Subform
+# All subcategoryform
 # Tag Form
 # {NAME} Name The Player
 # {DISPLAY_NAME} Display Name The Player
-sub-form:
+subcategory-form:
  rules:
   title: "Rules"
   content:
