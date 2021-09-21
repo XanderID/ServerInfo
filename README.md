@@ -9,18 +9,18 @@ Commands | Default
 `/serverinfo` | True
 
 # Feature
-- You can Create, Your custom Sub
-- Add Button On Sub
+- You can Create, Your custom subcategory
+- Add Button On subcategory
 - Set Action For Button
-- Set Title For Sub
-- Set Content For Sub
-- Send Sub for First Player Join
-- Send Sub For Player Join
+- Set Title For subcategory
+- Set Content For subcategory
+- Send subcategory for First Player Join
+- Send subcategory For Player Join
 
 # ToDo List
-- Per sub have permissions
+- Per subcategory have permissions
 - Per Button have permissions
-- Edit Sub In Game
+- Edit subcategory In Game
 
 I don't know if I will do it or not, because I'm lazy hahaha :)
 
@@ -32,20 +32,20 @@ I don't know if I will do it or not, because I'm lazy hahaha :)
 # Send Info 
 # On First Player Join
 on-first-join: true
-# Sub Form
+# subcategory Form
 join-first-form: "rules"
 
 # Send Info
 # On Player Join
 on-join: true
-# Sub Form
+# subcategory Form
 join-form: "welcome"
 
-# All Subform
+# All subcategoryform
 # Tag Form
 # {NAME} Name The Player
 # {DISPLAY_NAME} Display Name The Player
-sub-form:
+subcategory-form:
  rules:
   title: "Rules"
   content:
